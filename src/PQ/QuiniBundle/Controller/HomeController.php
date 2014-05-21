@@ -17,7 +17,8 @@ class HomeController extends Controller
         $partits = $this->getDoctrine()
             ->getRepository('PQQuiniBundle:PtqPartitQuiniela')
             ->findBy(
-                array('ptqAny' => '2013', 'ptqJornada' => '34')
+                array('ptqAny' => '2013', 'ptqJornada' => '34'),
+                array('ptqCasella' => 'ASC')
             );
 
         if (!$partits) {
@@ -28,7 +29,10 @@ class HomeController extends Controller
 
         return $this->render(
             'PQQuiniBundle:Home:home.html.twig',
-            array('last_username' => $session->get(SecurityContext::LAST_USERNAME))
+            array(
+                'last_username' => $session->get(SecurityContext::LAST_USERNAME),
+                'partits' => $partits
+            )
         );
     }
 
