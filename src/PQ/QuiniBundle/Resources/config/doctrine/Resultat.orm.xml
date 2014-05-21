@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PQ\QuiniBundle\Entity\Resultat" table="resultat">
+    <id name="jornada" type="integer" column="Jornada"/>
+    <id name="temporada" type="date" column="Temporada"/>
+    <field name="partit1" type="integer" column="Partit1" nullable="false"/>
+    <field name="partit2" type="integer" column="Partit2" nullable="false"/>
+    <field name="partit3" type="integer" column="Partit3" nullable="false"/>
+    <field name="partit4" type="integer" column="Partit4" nullable="false"/>
+    <field name="partit5" type="integer" column="Partit5" nullable="false"/>
+    <field name="partit6" type="integer" column="Partit6" nullable="false"/>
+    <field name="partit7" type="integer" column="Partit7" nullable="false"/>
+    <field name="partit8" type="integer" column="Partit8" nullable="false"/>
+    <field name="partit9" type="integer" column="Partit9" nullable="false"/>
+    <field name="partit10" type="integer" column="Partit10" nullable="false"/>
+    <field name="partit11" type="integer" column="Partit11" nullable="false"/>
+    <field name="partit12" type="integer" column="Partit12" nullable="false"/>
+    <field name="partit13" type="integer" column="Partit13" nullable="false"/>
+    <field name="partit14" type="integer" column="Partit14" nullable="false"/>
+    <field name="partit15" type="integer" column="Partit15" nullable="false"/>
+  </entity>
+</doctrine-mapping>

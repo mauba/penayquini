@@ -1,0 +1,48 @@
+{% extends "PQQuiniBundle::layout.html.twig" %}
+
+{% block title'Penyaquini - login' %} 
+
+{% block head %}
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$("#login_usuari").focus();
+});
+</script>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="panel panel-default" style="max-width: 400px; margin: 0 auto 10px;">
+  <div class="panel-heading">
+  	<h3 class="panel-title">Entra a Penyaquini</h3>
+  </div>
+  <div class="panel-body">
+
+    {% if error %}
+        <div class="alert alert-danger"><strong>Ups! </strong> {{ error.message|trans({},'messages')|raw }}</div>
+    {% endif %}
+  
+  	{{ form_start(form, {'action': path('login_check'), 'method': 'post'}) }}
+  	    
+	    <div class="input-group">
+		  <span class="input-group-addon">
+		  	<span class="glyphicon glyphicon-user"></span>
+		  </span>
+		  {{ form_widget(form.usuari, {'attr': {'class': 'form-control', 'placeholder': 'Usuari', 'value': last_username}}) }}
+		  {{ form_errors(form.usuari) }}
+		</div>
+	    <div class="input-group">
+		  <span class="input-group-addon">
+		  	<span class="glyphicon glyphicon-lock"></span>
+		  </span>
+		  {{ form_widget(form.contrasenya, {'attr': {'class': 'form-control', 'placeholder': 'Contrasenya'}}) }}
+		  {{ form_errors(form.contrasenya) }}		  
+		</div>
+		{{ form_widget(form.entra,{'attr': {'class': 'btn btn-primary btn-block', 'style': 'margin-top: 15px;'}} ) }}
+		{{ form_end(form) }}
+  </div>
+</div>
+
+{% endblock %}

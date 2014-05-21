@@ -1,0 +1,4 @@
+pq_quini:
+    resource: "@PQQuiniBundle/Resources/config/routing.yml"
+    prefix:   /
+

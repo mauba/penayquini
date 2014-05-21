@@ -1,0 +1,26 @@
+pq_welcome_homepage:
+    pattern:  /
+    defaults: 
+        _controller: FrameworkBundle:Template:template
+        template: 'PQQuiniBundle:Default:index.html.twig'
+
+login:
+    pattern:  /login
+    defaults: 
+     { _controller: PQQuiniBundle:Login:login }
+
+login_check:
+    pattern:  /private/login_check
+    
+logout:
+    pattern:   /private/logout
+    
+home:
+    pattern:  /private/home
+    defaults:
+       { _controller: PQQuiniBundle:Home:home }
+
+editUser:
+    pattern: /private/edituser
+    defaults:
+       { _controller: PQQuiniBundle:Edituser:edituser }

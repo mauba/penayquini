@@ -1,0 +1,52 @@
+security:
+    encoders:
+        PQ\QuiniBundle\Entity\Participant: plaintext
+#            algorithm: bcrypt
+#        Symfony\Component\Security\Core\User\User: plaintext
+
+
+#    role_hierarchy:
+#        ROLE_ADMIN:       ROLE_USER
+#        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        main:
+            entity:
+                class: PQ\QuiniBundle\Entity\Participant
+                property: nomP
+#        in_memory:
+#            memory:
+#                users:
+#                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+#                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+#                    Miquel: { password: pepe, roles: [ 'ROLE_USER', 'ROLE_ADMIN' ] }
+
+    firewalls:
+#        dev:
+#            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+#            security: false
+#
+#        login:
+#            pattern:  ^/login$
+#            anonymous: ~
+#            #security: false
+
+        secured_area:
+            pattern:    ^/private/
+            anonymous: ~
+            form_login:
+                login_path: login
+                check_path: login_check
+                username_parameter: login[usuari]
+                password_parameter: login[contrasenya]
+            logout:
+                path:   /private/logout
+                target: /
+            security: true
+            http_basic:
+                realm: "Secured Demo Area"
+#                provider: in_memory
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/private, roles: ROLE_USER }

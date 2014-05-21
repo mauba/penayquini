@@ -1,0 +1,35 @@
+<?php
+
+namespace PQ\QuiniBundle\Controller;
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\HttpFoundation\Request;
+
+class HomeController extends Controller
+{
+
+    public function homeAction(Request $request)
+    {
+
+        $session = $request->getSession();
+
+        $partits = $this->getDoctrine()
+            ->getRepository('PQQuiniBundle:PtqPartitQuiniela')
+            ->findBy(
+                array('ptqAny' => '2013', 'ptqJornada' => '34')
+            );
+
+        if (!$partits) {
+            throw $this->createNotFoundException(
+                'No product found for id  blas'
+            );
+        }
+
+        return $this->render(
+            'PQQuiniBundle:Home:home.html.twig',
+            array('last_username' => $session->get(SecurityContext::LAST_USERNAME))
+        );
+    }
+
+}

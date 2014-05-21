@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PQ\QuiniBundle\Entity\Votacio" table="votacio">
+    <id name="idP" type="integer" column="id_p"/>
+    <id name="jornada" type="integer" column="jornada"/>
+    <id name="temporada" type="date" column="temporada"/>
+    <field name="resultat1" type="integer" column="resultat1" nullable="false"/>
+    <field name="resultat2" type="integer" column="resultat2" nullable="false"/>
+    <field name="resultat3" type="integer" column="resultat3" nullable="false"/>
+    <field name="resultat4" type="integer" column="resultat4" nullable="false"/>
+    <field name="resultat5" type="integer" column="resultat5" nullable="false"/>
+    <field name="resultat6" type="integer" column="resultat6" nullable="false"/>
+    <field name="resultat7" type="integer" column="resultat7" nullable="false"/>
+    <field name="resultat8" type="integer" column="resultat8" nullable="false"/>
+    <field name="resultat9" type="integer" column="resultat9" nullable="false"/>
+    <field name="resultat10" type="integer" column="resultat10" nullable="false"/>
+    <field name="resultat11" type="integer" column="resultat11" nullable="false"/>
+    <field name="resultat12" type="integer" column="resultat12" nullable="false"/>
+    <field name="resultat13" type="integer" column="resultat13" nullable="false"/>
+    <field name="resultat14" type="integer" column="resultat14" nullable="false"/>
+    <field name="resultat15" type="integer" column="resultat15" nullable="false"/>
+  </entity>
+</doctrine-mapping>

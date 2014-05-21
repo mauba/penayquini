@@ -1,0 +1,31 @@
+@CHARSET "ISO-8859-1";
+html {
+  height: 100%
+}
+body {
+    min-height: 100%;
+}
+
+@media (max-width: 1024px) {
+    h1 {
+       font-size: 30px !important;
+    }
+    p {
+        font-size: 20px !important
+    }
+}
+@media (max-width: 640px) {
+    h1 {
+        font-size: 22px !important;
+    }
+    p {
+        font-size: 14px !important
+    }
+}
+
+.green {
+	color: #468847 !important;
+}
+.red {
+	color: #b94a48 !important;
+}

@@ -1,0 +1,22 @@
+{% extends "PQQuiniBundle::layout.html.twig" %}
+
+{% block title'PenyaQuini' %} 
+
+{% block body %}
+
+    <div class="jumbotron">
+        <h1>Benvinguts a Penyaquini</h1>
+
+        <p>Una penya quinielista on participar de les jornades futbol&iacute;stiques amb els amics.</p>
+
+        <div class="text-center">
+            <form action="{{ path('home') }}">
+                <button type="submit" class="btn btn-primary navbar-btn">
+                    Entra <span class="glyphicon glyphicon-log-in"></span>
+                </button>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}

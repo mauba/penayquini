@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PQ\QuiniBundle\Entity\ComCompeticio" table="com_competicio">
+    <id name="idCom" type="integer" column="ID_COM">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="comNom" type="string" column="COM_NOM" length="45" nullable="false"/>
+    <field name="comAnyActual" type="integer" column="COM_ANY_ACTUAL" nullable="false"/>
+    <field name="comJornadaActual" type="integer" column="COM_JORNADA_ACTUAL" nullable="false"/>
+  </entity>
+</doctrine-mapping>

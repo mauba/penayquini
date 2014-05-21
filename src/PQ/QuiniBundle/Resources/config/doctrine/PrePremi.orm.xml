@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="PQ\QuiniBundle\Entity\PrePremi" table="pre_premi">
+    <indexes>
+      <index name="PTQ_JORNADA" columns="PTQ_JORNADA"/>
+    </indexes>
+    <id name="ptqAny" type="integer" column="PTQ_ANY"/>
+    <id name="ptqJornada" type="integer" column="PTQ_JORNADA"/>
+    <field name="preImport" type="float" column="PRE_IMPORT" precision="10" scale="2" nullable="false"/>
+  </entity>
+</doctrine-mapping>

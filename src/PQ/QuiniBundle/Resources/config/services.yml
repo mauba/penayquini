@@ -1,0 +1,7 @@
+parameters:
+#    pq_quini.example.class: PQ\QuiniBundle\Example
+
+services:
+#    pq_quini.example:
+#        class: %pq_quini.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
