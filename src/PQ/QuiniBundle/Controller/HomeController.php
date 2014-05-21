@@ -22,7 +22,7 @@ class HomeController extends Controller
 
         if (!$partits) {
             throw $this->createNotFoundException(
-                'No product found for id  blas'
+                'No product found for id  bla asdfs'
             );
         }
 
