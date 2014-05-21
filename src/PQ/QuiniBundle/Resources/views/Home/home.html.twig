@@ -1,37 +1,8 @@
-{% extends "PQQuiniBundle::layout.html.twig" %}
+{% extends "PQQuiniBundle::layout_logged.html.twig" %}
 
 {% block title'Penyaquini - Inici' %} 
 
-{% block head %}
-{% endblock %}
-
-{% block logedin %}
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a id="edituser" href="{{ path('editUser') }}"><span class="glyphicon glyphicon-cog"></span> Editar
-                    perfil</a></li>
-            <li class="divider"></li>
-            <li><a id="logout" href="{{ path('logout') }}">Surt <span class="glyphicon glyphicon-log-out"></span></a>
-            </li>
-        </ul>
-    </li>
-
-{% endblock %}
-
-
 {% block body %}
-
-    <ul class="nav nav-pills">
-        <li class="active"><a href="#" title="Inici" alt="Pagina principal de la Penyaquini"><span
-                        class="glyphicon glyphicon-home"></span></a></li>
-        <li><a href="#">Estad&iacute;stiques</a></li>
-        <li><a href="#">Classificaci&oacute;</a></li>
-        <li><a href="#">Premis</a></li>
-        <li><a href="#">Guanyadors</a></li>
-        <li><a href="#">Normativa</a></li>
-    </ul>
 
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-9">
@@ -55,6 +26,15 @@
 
                     <br>
                 {% endfor %}
+
+
+                <div class="text-right">
+                    <form action="{{ path('home') }}">
+                        <button type="submit" class="btn btn-primary navbar-btn">
+                            Vota <span class="glyphicon glyphicon-send"></span>
+                        </button>
+                    </form>
+                </div>
 
             </div>
 
