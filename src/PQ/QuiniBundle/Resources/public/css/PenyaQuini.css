@@ -30,6 +30,6 @@ body {
 	color: #b94a48 !important;
 }
 
-.btn-default.active {
+div.btn-group > label.btn-default.active {
     background-color: #008134 !important;
 }
