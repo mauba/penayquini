@@ -29,7 +29,3 @@ body {
 .red {
 	color: #b94a48 !important;
 }
-
-div.btn-group > label.btn-default.active {
-    background-color: #008134 !important;
-}
