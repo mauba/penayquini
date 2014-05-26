@@ -1,31 +1,60 @@
 {% extends "PQQuiniBundle::layout.html.twig" %}
 
-{% block menu %}
+{% block loggedin1 %}
 
-    <ul class="nav nav-pills">
-        <li class="active">
-            <a href="{{ path('home') }}" title="Inici" alt="Pagina principal de la Penyaquini"><span
-                        class="glyphicon glyphicon-home"></span></a></li>
-        <li><a href="#">Estad&iacute;stiques</a></li>
-        <li><a href="#">Classificaci&oacute;</a></li>
-        <li><a href="#">Premis</a></li>
-        <li><a href="#">Guanyadors</a></li>
-        <li><a href="#">Normativa</a></li>
-    </ul>
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-responsive-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
 
 {% endblock %}
 
-{% block logedin %}
-    <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span
-                    class="glyphicon glyphicon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
-        <ul class="dropdown-menu">
-            <li><a id="edituser" href="{{ path('editUser') }}"><span class="glyphicon glyphicon-cog"></span> Editar
-                    perfil</a></li>
-            <li class="divider"></li>
-            <li><a id="logout" href="{{ path('logout') }}">Surt <span class="glyphicon glyphicon-log-out"></span></a>
-            </li>
-        </ul>
+
+{% block loggedin2 %}
+
+<div class="navbar-collapse collapse navbar-responsive-collapse">
+
+    <ul class="nav navbar-nav navbar-right">
+
+    <li>
+        <a href="{{ path('home') }}" title="Inici" alt="Pagina principal de la Penyaquini">
+            <span class="glyphicon glyphicon-home"></span>
+        </a>
     </li>
+    <li>
+        <a href="#">
+            <span class="glyphicon glyphicon-signal"></span>
+            Estad&iacute;stiques
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="glyphicon glyphicon-sort-by-attributes"></span>
+            Classificaci&oacute;
+        </a>
+
+    </li>
+    <li>
+        <a href="#">
+            <span class="glyphicon glyphicon-euro"></span>
+            Premis
+        </a>
+    </li>
+    <li>
+        <a href="#">
+            <span class="glyphicon glyphicon-gift"></span>
+            Guanyadors</a>
+    </li>
+    <li><a href="#">
+            <span class="glyphicon glyphicon-info-sign"></span>
+            Normativa</a></li>
+    <li><a id="edituser" href="{{ path('editUser') }}"><span class="glyphicon glyphicon-cog"></span> Editar
+            perfil</a></li>
+    <li><a id="logout" href="{{ path('logout') }}">Surt <span class="glyphicon glyphicon-log-out"></span></a>
+
+    </ul>
+</div>
 
 {% endblock %}
