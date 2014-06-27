@@ -4654,6 +4654,14 @@ INSERT INTO `resultat` (`Jornada`, `Temporada`, `Partit1`, `Partit2`, `Partit3`,
 
 TRUNCATE TABLE `schema_changes`;
 --
+-- Dumping data for table `schema_changes`
+--
+
+INSERT INTO `schema_changes` (`id`, `MajorReleaseNumber`, `MinorReleaseNumber`, `PointReleaseNumber`, `scriptName`, `dateApplied`, `changeDescription`) VALUES
+(1, '00', '00', '0001', 'db_schema_00.00.0001.sql', '2014-06-27 15:00:00', 'Database creation'),
+(2, '00', '00', '0002', 'db_data_00.00.0002.sql', '2014-06-27 15:00:00', 'Insert historical data');
+
+-
 -- Truncate table before insert `votacio`
 --
 
@@ -8344,6 +8352,8 @@ INSERT INTO `votacio` (`id_p`, `jornada`, `temporada`, `resultat1`, `resultat2`,
 (63, 28, 2013, 1, 1, 2, 2, 1, 2, 1, 1, 2, 1, 2, 3, 3, 1, 1),
 (66, 9, 2013, 1, 3, 2, 1, 3, 3, 1, 1, 1, 2, 1, 2, 3, 1, 1),
 (66, 12, 2013, 1, 1, 1, 1, 3, 1, 3, 1, 2, 1, 1, 1, 2, 1, 2);
+
+
 SET FOREIGN_KEY_CHECKS=1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
