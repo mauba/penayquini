@@ -8,8 +8,9 @@
         <div class="col-xs-12 col-sm-6 col-md-9">
 
             <div class="well">
-				<form action="{{ path('home') }}">
 
+				{{ form_start(form, {'action': path('vote'), 'method': 'post'}) }}
+				
 	                <ul class="list-group">
 	
 	                    {% for partit in partits %}
@@ -39,10 +40,7 @@
 	                            Vota <span class="glyphicon glyphicon-send"></span>
 	                        </button>
 	                </div>
-			</form>
-
             </div>
-
         </div>
 
         <div class="col-xs-6 col-md-3">

@@ -16,11 +16,17 @@ class HomeController extends Controller
     {
 
         $session = $request->getSession();
-
+        $session->set('temporada', '2013');
+        $session->set('jornadaActual', '33');
+        $votacio = new Votacio();
+        $form = $this->createForm(new VotacioType(), $votacio, array(
+        		'action' => $this->generateUrl('vote'),
+        ));
+        
         $partits = $this->getDoctrine()
             ->getRepository('PQQuiniBundle:PtqPartitQuiniela')
             ->findBy(
-                array('ptqAny' => '2013', 'ptqJornada' => '34'),
+                array('ptqAny' => $session->get('temporada'), 'ptqJornada' => $session->get('jornadaActual')),
                 array('ptqCasella' => 'ASC')
             );
 
@@ -29,17 +35,6 @@ class HomeController extends Controller
                 'No product found for id  bla asdfs'
             );
         }
-        
-        
-        $votacio = new Votacio();
-        $form = $this->createForm(new VotacioType(), $votacio, array(
-        		'action' => $this->generateUrl('vote'),
-        ));
-        
-//         return $this->render(
-//         		'AcmeAccountBundle:Account:register.html.twig',
-//         		array('form' => $form->createView())
-//         );
 
         return $this->render(
             'PQQuiniBundle:Home:home.html.twig',
