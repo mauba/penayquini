@@ -24,3 +24,8 @@ editUser:
     pattern: /private/edituser
     defaults:
        { _controller: PQQuiniBundle:Edituser:edituser }
+       
+vote:
+    pattern: /private/home/vote
+    defaults:
+       { _controller: PQQuiniBundle:Home:vote }

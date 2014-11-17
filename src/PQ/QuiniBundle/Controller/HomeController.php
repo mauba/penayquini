@@ -5,6 +5,7 @@ namespace PQ\QuiniBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
+use PQ\QuiniBundle\Entity\PtqPartitQuiniela;
 
 class HomeController extends Controller
 {
