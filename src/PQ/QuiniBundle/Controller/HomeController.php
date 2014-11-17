@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Security\Core\SecurityContext;
 use Symfony\Component\HttpFoundation\Request;
 use PQ\QuiniBundle\Entity\PtqPartitQuiniela;
+use PQ\QuiniBundle\Form\Type\VotacioType;
+use PQ\QuiniBundle\Entity\Votacio;
 
 class HomeController extends Controller
 {
@@ -27,12 +29,24 @@ class HomeController extends Controller
                 'No product found for id  bla asdfs'
             );
         }
+        
+        
+        $votacio = new Votacio();
+        $form = $this->createForm(new VotacioType(), $votacio, array(
+        		'action' => $this->generateUrl('vote'),
+        ));
+        
+//         return $this->render(
+//         		'AcmeAccountBundle:Account:register.html.twig',
+//         		array('form' => $form->createView())
+//         );
 
         return $this->render(
             'PQQuiniBundle:Home:home.html.twig',
             array(
                 'last_username' => $session->get(SecurityContext::LAST_USERNAME),
-                'partits' => $partits
+                'partits' => $partits,
+				'form' => $form->createView()
             )
         );
     }
