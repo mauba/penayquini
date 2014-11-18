@@ -35,11 +35,8 @@
 	                    {% endfor %}
 	                </ul>
 
-	                <div class="text-right">
-	                        <button type="submit" class="btn btn-primary navbar-btn">
-	                            Vota <span class="glyphicon glyphicon-send"></span>
-	                        </button>
-	                </div>
+	                {{ form_widget(form.vota,{'attr': {'class': 'btn btn-primary btn-block', 'style': 'margin-top: 15px;'}} ) }}
+	                
             </div>
         </div>
 
