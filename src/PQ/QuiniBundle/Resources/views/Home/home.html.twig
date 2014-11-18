@@ -10,6 +10,8 @@
             <div class="well">
 
 				{{ form_start(form, {'action': path('vote'), 'method': 'post'}) }}
+	
+				{{ form_widget(form.resultat1) }}
 				
 	                <ul class="list-group">
 	
