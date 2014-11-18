@@ -11,8 +11,6 @@
 
 				{{ form_start(form, {'action': path('vote'), 'method': 'post'}) }}
 	
-				{{ form_widget(form.resultat1) }}
-				
 	                <ul class="list-group">
 	
 	                    {% for partit in partits %}
@@ -24,13 +22,13 @@
 	                            {{ partit.idEquLocal.equNom }} - {{ partit.idEquVisitant.equNom }}
 	                            <div class="btn-group  pull-right" data-toggle="buttons">
 	                                <label class="btn btn-default">
-	                                    <input type="radio" name="options" id="option1"> 1
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).0) }}1
 	                                </label>
 	                                <label class="btn btn-default">
-	                                    <input type="radio" name="options" id="option2"> X
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).1) }}X
 	                                </label>
 	                                <label class="btn btn-default">
-	                                    <input type="radio" name="options" id="option3"> 2
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).2) }}2
 	                                </label>
 	                            </div>
 	                        </li>
