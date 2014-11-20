@@ -24,13 +24,14 @@ class VoteController extends Controller
         ));
         
                         
-        $form->handleRequest($request);
+//         $form->handleRequest($request);
         
-        if ($form->isValid()) {
-        	// perform some action...
+//         if ($form->isValid()) {
+//         	// perform some action...
         
-//         	return $this->redirect($this->generateUrl('task_success'));
+// //         	return $this->redirect($this->generateUrl('task_success'));
         
+//         }
         
         $partits = $this->getDoctrine()
             ->getRepository('PQQuiniBundle:PtqPartitQuiniela')
@@ -58,7 +59,6 @@ class VoteController extends Controller
 				'form' => $form->createView()
             )
         );
-        }
     }
 
 }
