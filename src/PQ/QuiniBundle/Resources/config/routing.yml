@@ -28,4 +28,4 @@ editUser:
 vote:
     pattern: /private/home/vote
     defaults:
-       { _controller: PQQuiniBundle:Home:vote }
+       { _controller: PQQuiniBundle:Vote:vote }

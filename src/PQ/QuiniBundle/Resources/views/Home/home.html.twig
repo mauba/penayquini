@@ -9,6 +9,13 @@
 
             <div class="well">
 
+			{# TODO: Edit look and feel #}
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+			    <div class="flash-notice">
+			        {{ flashMessage }}
+			    </div>
+			{% endfor %}
+
 				{{ form_start(form, {'action': path('vote'), 'method': 'post'}) }}
 	
 	                <ul class="list-group">
