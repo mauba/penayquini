@@ -9,14 +9,14 @@
 
             <div class="well">
 
+            {{ form_start(form, {'action': path('vote'), 'method': 'post', 'attr': {'novalidate': ''}}) }}
+            
 			{# TODO: Edit look and feel #}
             {% for flashMessage in app.session.flashbag.get('notice') %}
 			    <div class="flash-notice">
 			        {{ flashMessage }}
 			    </div>
 			{% endfor %}
-
-				{{ form_start(form, {'action': path('vote'), 'method': 'post'}) }}
 	
 	                <ul class="list-group">
 	
@@ -29,13 +29,13 @@
 	                            {{ partit.idEquLocal.equNom }} - {{ partit.idEquVisitant.equNom }}
 	                            <div class="btn-group  pull-right" data-toggle="buttons">
 	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).0) }}1
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).0, {'attr': {'class': 'form-control'}}) }}1
 	                                </label>
 	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).1) }}X
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).1, {'attr': {'class': 'form-control'}}) }}X
 	                                </label>
 	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).2) }}2
+	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).2, {'attr': {'class': 'form-control'}}) }}2
 	                                </label>
 	                            </div>
 	                        </li>
@@ -43,7 +43,7 @@
 	                </ul>
 
 	                {{ form_widget(form.vota,{'attr': {'class': 'btn btn-primary btn-block', 'style': 'margin-top: 15px;'}} ) }}
-	                
+					{{ form_end(form) }}                
             </div>
         </div>
 
