@@ -16,49 +16,33 @@ class VoteController extends Controller
     {
 
         $session = $request->getSession();
-        $session->set('temporada', '2013');
-        $session->set('jornadaActual', '33');
-        $votacio = new Votacio();
+		$votacio = new Votacio();
         $form = $this->createForm(new VotacioType(), $votacio, array(
-        		'action' => $this->generateUrl('vote'),
+			'action' => $this->generateUrl('vote'),
         ));
         
-                        
-//         $form->handleRequest($request);
+        $form->handleRequest($request);
         
-//         if ($form->isValid()) {
-//         	// perform some action...
+        if ($form->isValid()) {
+        	// perform some action...
+        	$form->getData();
+        	
+        	$this->get('session')->getFlashBag()->add(
+        			'notice',
+        			'Votació guardada correctament.' //. $form->get('votacio')->get('resultat1')->getData()
+        	);
         
-// //         	return $this->redirect($this->generateUrl('task_success'));
-        
-//         }
-        
-        $partits = $this->getDoctrine()
-            ->getRepository('PQQuiniBundle:PtqPartitQuiniela')
-            ->findBy(
-                array('ptqAny' => $session->get('temporada'), 'ptqJornada' => $session->get('jornadaActual')),
-                array('ptqCasella' => 'ASC')
-            );
-
-        if (!$partits) {
-            throw $this->createNotFoundException(
-                'No product found for id  bla asdfs'
-            );
+        }else{
+        	
+        	$this->get('session')->getFlashBag()->add(
+        			'notice',
+        			'Formulari no valid'
+        	);
+        	
         }
+       
+        return $this->redirect($this->generateUrl('home'));
         
-        $this->get('session')->getFlashBag()->add(
-        		'notice',
-        		'Your changes were saved!'
-        );
-
-        return $this->render(
-            'PQQuiniBundle:Home:home.html.twig',
-            array(
-                'last_username' => $session->get(SecurityContext::LAST_USERNAME),
-                'partits' => $partits,
-				'form' => $form->createView()
-            )
-        );
     }
 
 }

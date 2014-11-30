@@ -9,7 +9,7 @@
 
             <div class="well">
 
-            {{ form_start(form, {'action': path('vote'), 'method': 'post', 'attr': {'novalidate': ''}}) }}
+            {{ form_start(form, {'action': path('vote'), 'method': 'post', 'attr': {'novalidate': '', 'class': 'form-horizontal'}}) }}
             
 			{# TODO: Edit look and feel #}
             {% for flashMessage in app.session.flashbag.get('notice') %}
@@ -18,29 +18,37 @@
 			    </div>
 			{% endfor %}
 	
-	                <ul class="list-group">
+{# 	                <ul class="list-group">#}
 	
 	                    {% for partit in partits %}
 	
-	                        <li class="list-group-item">
-	                            {{ partit.ptqCasella }}
-	                            <img src="/penyaquini/web/bundles/pqquini/images/teams/{{ partit.idEquLocal.equNomCurt }}.png">
-	                            <img src="/penyaquini/web/bundles/pqquini/images/teams/{{ partit.idEquVisitant.equNomCurt }}.png">
-	                            {{ partit.idEquLocal.equNom }} - {{ partit.idEquVisitant.equNom }}
-	                            <div class="btn-group  pull-right" data-toggle="buttons">
-	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).0, {'attr': {'class': 'form-control'}}) }}1
-	                                </label>
-	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).1, {'attr': {'class': 'form-control'}}) }}X
-	                                </label>
-	                                <label class="btn btn-default">
-	                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).2, {'attr': {'class': 'form-control'}}) }}2
-	                                </label>
-	                            </div>
-	                        </li>
+{# 	                        <li class="list-group-item">#}
+	                        	<div class="form-group">
+	                        		<div class="col-sm-4" >
+		                        	<span>
+			                            {{ partit.ptqCasella }}
+		                        	</span>
+		                            <img src="/penyaquini/web/bundles/pqquini/images/teams/{{ partit.idEquLocal.equNomCurt }}.png">
+		                            <img src="/penyaquini/web/bundles/pqquini/images/teams/{{ partit.idEquVisitant.equNomCurt }}.png">
+		                            <span>
+			                            {{ partit.idEquLocal.equNom }} - {{ partit.idEquVisitant.equNom }}
+		                            </span>
+	                        		</div>
+		                            <div class="col-sm-8 btn-group" data-toggle="buttons">
+		                                <label class="btn btn-default">
+		                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).0, {'attr': {'class': 'form-control'}}) }}1
+		                                </label>
+		                                <label class="btn btn-default">
+		                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).1, {'attr': {'class': 'form-control'}}) }}X
+		                                </label>
+		                                <label class="btn btn-default">
+		                                    {{ form_widget(attribute(form, 'resultat' ~ partit.ptqCasella).2, {'attr': {'class': 'form-control'}}) }}2
+		                                </label>
+		                            </div>
+	                        	</div>
+{# 	                        </li>#}
 	                    {% endfor %}
-	                </ul>
+{# 	                </ul>#}
 
 	                {{ form_widget(form.vota,{'attr': {'class': 'btn btn-primary btn-block', 'style': 'margin-top: 15px;'}} ) }}
 					{{ form_end(form) }}                

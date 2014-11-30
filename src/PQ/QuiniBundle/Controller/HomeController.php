@@ -32,7 +32,7 @@ class HomeController extends Controller
 
         if (!$partits) {
             throw $this->createNotFoundException(
-                'No product found for id  bla asdfs'
+                'No s\'han trobat partits per la temporada' . $session->get('temporada') . ' i la jornada ' . $session->get('jornadaActual') 
             );
         }
 
