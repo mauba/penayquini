@@ -29,7 +29,7 @@ class VoteController extends Controller
         	
         	$this->get('session')->getFlashBag()->add(
         			'notice',
-        			'Votació guardada correctament.' //. $form->get('votacio')->get('resultat1')->getData()
+        			'Votació guardada correctament.' . $form->get('resultat1')->getData()
         	);
         
         }else{
