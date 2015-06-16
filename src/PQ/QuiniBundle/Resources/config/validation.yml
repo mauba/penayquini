@@ -1,0 +1,4 @@
+PQ\QuiniBundle\Form\Type\VotacioType:
+  properties:
+    resultat1:
+      - NotNull: ~

@@ -215,7 +215,7 @@ pip-log.txt
 .mr.developer.cfg
 
 # Symfony2
-vendor/
+#vendor/
 app/cache/
 src/Acme/
 web/bundles/acmedemo
